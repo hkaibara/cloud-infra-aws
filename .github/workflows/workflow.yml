@@ -10,5 +10,6 @@ jobs:
       - name: Check branch
         if: ${{(github.event.pull_request.base.ref == 'prod' && github.event.pull_request.head.ref != 'test') || (github.event.pull_request.base.ref == 'test' && github.event.pull_request.head.ref != 'feature/*') }}
         run: |
-          echo "${{github.event.pull_request.head.ref}}"
+          echo "${{github.event.pull_request.head.ref}}" 
+          echo test
           exit 1
