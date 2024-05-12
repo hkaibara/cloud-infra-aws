@@ -1,12 +1,10 @@
-name: 'Check Branch'
+name: 'CI'
 
 on:
   pull_request:
-    types: 
-      - closed
-      - edited
-      - synchronize
 
+  
+    
 jobs:
   check_branch:
     runs-on: ubuntu-latest
@@ -19,10 +17,10 @@ jobs:
           exit 1
 
 
-  run_on_Merge:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: runs upon merging
-        if: github.event.pull_request.merged == true
+      - name: build and testing
+        if: 
         run: |
-          echo PR MERGED
+          echo build and testing
