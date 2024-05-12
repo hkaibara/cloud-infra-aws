@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check branch
-        if: ${{(github.event.pull_request.base.ref == 'prod' && github.event.pull_request.head.ref != 'test') || github.event.pull_request.base.ref == 'test'}}
+        if: ${{ (github.event.pull_request.base.ref == 'prod' && github.event.pull_request.head.ref != 'test') || (github.event.pull_request.base.ref == 'test') }}
         run: |
           echo "${{github.event.pull_request.head.ref}}"
           exit 1
