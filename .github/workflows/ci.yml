@@ -28,7 +28,7 @@ jobs:
 
       - name: current Branch
         run: |
-          git branch
+          git rev-parse --abbrev-ref HEAD
   
       - name: build and testing
         if: 
