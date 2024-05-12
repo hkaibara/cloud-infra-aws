@@ -16,3 +16,10 @@ jobs:
           exit 1
 
 
+  run_on_Merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: runs upon merging
+        if: ${{ github.event.pull_request.merged == true }}
+        run: |
+          echo PR MERGED
