@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check branch
-        if: ${{ startsWith(github.event.pull_request.head.ref, 'feature') }}
+        if: ${{ github.event.pull_request.head.ref == 'feature/test' }}
         run: |
           echo "${{github.event.pull_request.head.ref}}"
           exit 1
