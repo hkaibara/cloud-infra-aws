@@ -2,7 +2,7 @@ name: 'CI'
 
 on:
   pull_request:
-
+  
   
     
 jobs:
@@ -15,13 +15,10 @@ jobs:
           echo "${{github.event.pull_request.head.ref}}" 
           echo test
           exit 1
-
-
   build:
     runs-on: ubuntu-latest
     needs: check_branch
     steps:
-
       - name: checkout
         uses: actions/checkout@v3
         id: checkout
