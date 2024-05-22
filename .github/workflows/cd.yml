@@ -1,17 +1,28 @@
 name: 'CD'
 
 on:
-  pull_request:
+  push:
     branches:
       - test
       - prod
-    types:
-      - closed
-
 jobs:
   build_and_push_image:
-    if: github.event.pull_request.merged == true
+
+    environment:
+      name: ${{ github.ref_name }}
+
     runs-on: ubuntu-latest
+
     steps:
-    - run: |
-        echo The PR was successfully merged.
+      - name: checkout
+        uses: actions/checkout@v3
+        id: checkout
+
+      - name: current Branch
+        run: |
+          echo ${{ github.ref_name }}
+
+      - name: verbose
+        run: |
+          echo ${{ github.ref_name }}
+          echo The PR was successfully merged ${{vars.ENV_VARS}} is the env var
