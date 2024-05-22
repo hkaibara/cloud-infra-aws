@@ -1,8 +1,6 @@
 name: 'CI'
 
 on:
-  push:
-    branches: feature/**
   pull_request:
     types: [opened, edited, reopened, review_requested, review_request_removed, labeled, unlabeled, synchronize]
     
