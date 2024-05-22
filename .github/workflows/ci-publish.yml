@@ -1,4 +1,4 @@
-name: 'CD'
+name: 'CI: build and publish'
 
 on:
   push:
