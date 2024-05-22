@@ -1,0 +1,41 @@
+Branch Protection rule
+    - prod
+        - Require a pull request before merging
+        - Require branches to be up to date before merging
+        - Require status checks to pass before merging
+            - add workflow job required to pass
+                - check branch base/head
+        - Require deployments to succeed before merging
+            - test branch
+        - Do not allow bypassing the above settings
+    
+    - test
+        - Require a pull request before merging
+        - Require branches to be up to date before merging
+        - Require status checks to pass before merging
+            - add workflow job required to pass
+                - check branch base/head
+                - build and test
+        - Do not allow bypassing the above settings
+
+Rulesets
+    - branch-naming-convention
+        - Restrict creations
+            - inlcusion
+                - **
+            - exclusion
+                - feature/**
+                - prod
+                - test
+
+Environments
+    - prod
+        - runner AWS Role ARN
+        - AWS ECR_REGISTRY
+        - AWS ECR_REPOSITORY
+    - test
+        - runner AWS Role ARN
+        - AWS ECR_REGISTRY
+        - AWS ECR_REPOSITORY
+
+CodeOwners
