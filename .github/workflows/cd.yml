@@ -16,5 +16,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo The PR was successfully merged.
-        echo ${{vars.ENV_VARSS}}
+        echo The PR was successfully merged ${{vars.ENV_VARSS}} is the env var
