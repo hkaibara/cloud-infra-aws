@@ -1,0 +1,23 @@
+name: 'CI: Build and Test'
+
+on:
+  push:
+    branches:
+      - feature/**
+jobs:
+
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        id: checkout
+
+      - name: current Branch
+        run: |
+          echo ${{ github.ref_name }}
+  
+      - name: build and testing
+        if: 
+        run: |
+          echo build and testing
