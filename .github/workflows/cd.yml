@@ -11,7 +11,10 @@ on:
 jobs:
   build_and_push_image:
     if: github.event.pull_request.merged == true
+    environment:
+      name: ${{ github.ref_name }}
     runs-on: ubuntu-latest
     steps:
     - run: |
         echo The PR was successfully merged.
+        echo ${{vars.ENV_VARSS}}
