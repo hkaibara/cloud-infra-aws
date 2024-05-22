@@ -23,7 +23,7 @@ jobs:
 
       - name: current Branch
         run: |
-          git rev-parse --abbrev-ref HEAD
+          echo ${{github.event.pull_request.base.ref}}
   
       - name: build and testing
         if: 
