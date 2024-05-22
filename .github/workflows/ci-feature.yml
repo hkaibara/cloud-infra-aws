@@ -6,4 +6,4 @@ on:
       - feature/**
 jobs:
   build_and_test:
-    uses: CI-Workflows/build-and-test.yml@main
+    uses: CI-Workflows/.github/workflows/build-and-test.yml@main
