@@ -20,4 +20,8 @@ jobs:
       - name: build and testing
         if: 
         run: |
+<<<<<<< HEAD
           echo build and testing
+=======
+          echo build and testing and another test1123
+>>>>>>> c6c0c1fa86c38921bcee0d45fe047e0f17c8c2bb
