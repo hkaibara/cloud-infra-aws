@@ -9,6 +9,7 @@ on:
 jobs:
   check_branch:
     runs-on: ubuntu-latest
+    if: github.event.pull_request
     steps:
       - name: Check branch
         if: ${{ ( github.event.pull_request.base.ref == 'prod' && github.event.pull_request.head.ref != 'test' ) || ( github.event.pull_request.base.ref == 'test' && (startsWith(github.event.pull_request.head.ref, 'feature/') != true) ) }}
