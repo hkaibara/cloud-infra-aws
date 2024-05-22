@@ -20,4 +20,4 @@ jobs:
       - name: build and testing
         if: 
         run: |
-          echo build and testing and another test
+          echo build and testing
